@@ -8,6 +8,7 @@ class EverCookie extends CWidget
     public $variableName = 'ec';
     public $sourcesDir = 'vendor.lagman.evercookie';
     public $baseUrl;
+    public $scriptOptions = [];
 
     public function init()
     {
@@ -18,13 +19,11 @@ class EverCookie extends CWidget
 
     public function run()
     {
-        $options = [
+        $defaultOptions = [
             'baseurl' => $this->baseUrl,
-//            'asseturi' => '/assets',
-//            'phpuri' => '/php',
         ];
 
-        $jsOptions = CJSON::encode($options);
+        $jsOptions = CJSON::encode(CMap::mergeArray($defaultOptions, $this->scriptOptions));
 
         Yii::app()->getComponent('clientScript')->registerScript('EverCookieInit#' . $this->id,
             "var {$this->variableName};", CClientScript::POS_HEAD);
