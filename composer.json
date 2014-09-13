@@ -1,0 +1,17 @@
+{
+    "name": "lagman/yii-evercookie",
+    "description": "Evercookie is a Javascript API that produces extremely persistent cookies in a browser",
+    "keywords": ["yii", "framework", "evercookie", "persistent", "cookie"],
+    "authors": [
+        {
+            "name": "Alexey Samoylov",
+            "email": "alexey.samoylov@gmail.com",
+            "homepage": "http://yiiblog.ru"
+        }
+    ],
+    "type": "yii-extension",
+    "require": {
+        "php": ">=5.4.0",
+		"lagman/evercookie": "*"
+    }
+}
